@@ -3,6 +3,10 @@ used to over-ride some default browser elements */
 * {
     margin: 0;
     padding: 0;
+    /* this is telling the browser to idnore padding
+    in overall width, to help address issue brought in the footer
+    re 100% width plus 35px padding */
+    box-sizing: border-box;
 }
 
 /* applies color and font to whole page */
@@ -45,3 +49,27 @@ header nav ul li a {
     font-weight: lighter;
     font-size: 22px;
 }
+
+footer {
+    background: #fce138;
+    width: 100%;
+    padding: 40px 35px;
+}
+
+footer h2 {
+    display: inline;
+    color: #024e76;
+    font-size: 30px;
+    margin: 0;
+}
+
+footer div {
+    float: right;
+    line-height: 1.5;
+    text-align: right;
+}
+
+footer a {
+    color: #024e76;
+}
+
