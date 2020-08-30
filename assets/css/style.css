@@ -3,7 +3,7 @@ used to over-ride some default browser elements */
 * {
     margin: 0;
     padding: 0;
-    /* this is telling the browser to idnore padding
+    /* this is telling the browser to ignore padding
     in overall width, to help address issue brought in the footer
     re 100% width plus 35px padding */
     box-sizing: border-box;
@@ -73,3 +73,30 @@ footer a {
     color: #024e76;
 }
 
+section {
+    padding: 60px;
+}
+
+/* the "." notation indicates class as our CSS selector. Note also, we are using
+    the relative URL path to select the background image. */
+.hero {
+    background-image: url("../images/hero-bg.jpg");
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-form {
+    color: #024e76;
+    background-color: #fce138;
+    padding: 20px;
+    width: 500px;
+    /* shorthand property to allow border style, width and color all in one line, 
+        which would otherwise be denoted individually as "border-style" "border-width"
+        and "border-color" */
+    border: solid 3px #024e76;
+    position: absolute;
+    bottom: 120px;
+    right: 140px;  
+}
