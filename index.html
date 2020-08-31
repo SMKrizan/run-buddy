@@ -79,50 +79,93 @@
         legibility and communicate parent/child relationships, which can improve dev speed. -->
 
     <!--what we do section-->
-    <section id="what-we-do">
-        <h2>What We Do</h2>
+    <section id="what-we-do" class="intro">
+        <h2 class="section-title primary-border">What We Do</h2>
         <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores placeat rem nemo, voluptatibus ratione vitae? Commodi magnam quo sed repudiandae, error nam, voluptatibus ea ullam vel voluptate nemo iste laudantium.
         </p>
     </section>
 
-    <!--what you do section-->
-    <section id="what-you-do">   
-        <h2>What You Do</h2>
+    <!--what you do section; note that more than one class can be listed by leaving a space in between -->
+    <section id="what-you-do" class="steps">   
+        <h2 class="section-title secondary-border">What You Do</h2>
         <div>
             <!-- we are using Scalable Vector Graphics (SVGs) which uses XML, defined as a series of points and lines 
                 filled with color. These will scale to any screen size without losing quality because the graphics 
                 will scale; this makes SVGs perfect for icons and logos.
                 Notice also the "alt" attribute: this is how content/context of images is explained to search
-                engines and assistive tech, such as screen readers. In this case, alt is set to "empty" so that 
-                the screen reader ignores it as unimportant.-->
+                engines and assistive tech, such as screen readers. In this case the element is a "decorative image",
+                so alt is set to "empty" indicating to the screen reader to ignore it as unimportant.-->
             <img src="./assets/images/step-1.svg" alt="" />
-            <h3>Step 1: Fill Our the Form ABove.</h3>
+            <!-- note that the 'span' element is used with each of the following h3 elements in order to
+                be able to define with CSS highlighting of these blocks of text. -->
+            <h3>Step 1: <span>Fill Our the Form Above.</span></h3>
             <p>You're already here, so why not?</p>
         </div>
 
         <div>
             <img src="./assets/images/step-2.svg" alt="" />
-            <h3>Step 2: Consult With One of Our Trainers.</h3>
+            <h3>Step 2: <span>Consult With One of Our Trainers.</span></h3>
             <p>Are you here to build muscle, lose weight, or just feel good?</p>
         </div>
 
         <div>
             <img src="./assets/images/step-3.svg" alt="" />
-            <h3>Step 3: Get Running.</h3>
+            <h3>Step 3: <span>Get Running.</span></h3>
             <p>Hit the ground running (literally) once your trainer lays out your plan.</p>
         </div>
 
         <div>
             <img src="./assets/images/step-4.svg" alt="" />
-            <h3>Step 4: See Results.</h3>
+            <h3>Step 4: <span>See Results.</span></h3>
             <p>Bi-weekly checkins with your trainer will keep you focused.</p>
         </div>
     </section>
 
-    <!--your trainers section-->
-    <section>
-        <h2>Your Trainers</h2>
+    <!--your trainers section; we are adding an id here to enable visitors to jump to this section by clicking
+        on its associated link in the navigation bar: this is a web design best practice. -->
+    <section id="your-trainers" class="trainers">
+        <h2 class="section-title primary-border">Meet the Trainers</h2>
+        <!-- 'Article' semantic element introduced to indicate to screen readers that all wrapped content is related.
+            The alt element here is a "simple image" and we are describing its content so that screen readers
+            have meaningful information to relay to users. Alt values should 1) describe the image in <= 140 chars,
+            2) convey content and purpose of image, and 3) should not begin with "image of..." or "graph of...", as 
+            screen readers already provide that information. -->
+        <article class="trainer">
+            <img src="./assets/images/trainer-1.jpg" alt="Arron Stephens in his workout clothes, ready to pump iron." />
+            <div class="trainer-bio text-left">
+                <h3>Arron Stephens</h3>
+                <h4>Speed / Strength</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum voluptas voluptate amet quod natus suscipit optio deserunt laboriosam repudiandae iste! In nam ullam expedita temporibus nihil molestiae ab modi optio.                    
+                </p>    
+            </div>
+        </article>
+
+        <!-- second trainer bio; notice that for the bio and image we simply reverse the order they are entered
+            into the HTML doc to affect the layout. Not always the best solution but works well here. -->
+        <article class="trainer">
+            <div class="trainer-bio text-right">
+                <h3>Joanna Gill</h3>
+                <h4>Endurance</h4>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique nesciunt, expedita architecto necessitatibus earum, asperiores ab qui libero assumenda doloremque, ut repudiandae voluptatibus debitis. Vel perferendis sapiente culpa blanditiis amet!
+                </p>
+            </div>
+            <img src="./assets/images/trainer-2.jpg" alt="Joanna Gill cooling off after a workout." />
+        </article>
+
+        <!-- third trainer bio -->
+        <article class="trainer">
+            <img src="./assets/images/trainer-3.jpg" alt="Harry Smith wearing a headband and lifting comically small pink weights." />
+            <div class="trainer-bio test-left">
+                <h3>Harry "the Headband" Smith</h3>
+                <h4>Strength</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium repellat optio, nesciunt iusto distinctio magnam officia odio nemo ratione dolorem vel aspernatur, enim minus saepe aliquid mollitia temporibus culpa dignissimos!
+                </p>
+            </div>
+        </article>
     </section>
 
     <!--reach out section-->
