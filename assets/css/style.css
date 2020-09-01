@@ -87,6 +87,12 @@ section {
     position: relative;
 }
 
+/* the following attributes could be used successfully to override those in the above .hero, however, for the sake of demonstrating a different option, we will be creating a seperate stylesheet.
+.hero-secondary {
+    background-color: black;
+    color: red;
+} */
+
 .hero-form {
     color: #024e76;
     background-color: #fce138;
