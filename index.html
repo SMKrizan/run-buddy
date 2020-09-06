@@ -85,15 +85,26 @@
 
     <!--what we do section-->
     <section id="what-we-do" class="intro">
-        <h2 class="section-title primary-border">What We Do</h2>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores placeat rem nemo, voluptatibus ratione vitae? Commodi magnam quo sed repudiandae, error nam, voluptatibus ea ullam vel voluptate nemo iste laudantium.
-        </p>
+        <!-- Wrapping each h2 that has a class of 'section-title' within a <div> with class of 'flex-row' -->
+        <div class="flex-row">
+            <h2 class="section-title primary-border">
+                What We Do
+            </h2>
+        </div>
+        <div class="flex-row">
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores placeat rem nemo, voluptatibus ratione vitae? Commodi magnam quo sed repudiandae, error nam, voluptatibus ea ullam vel voluptate nemo iste laudantium.
+            </p>
+        </div>
     </section>
 
     <!--what you do section; note that more than one class can be listed by leaving a space in between -->
-    <section id="what-you-do" class="steps">   
-        <h2 class="section-title secondary-border">What You Do</h2>
+    <section id="what-you-do" class="steps">
+        <div class="flex-row">
+            <h2 class="section-title secondary-border">
+                What You Do
+            </h2>
+        </div>
         <div>
             <!-- we are using Scalable Vector Graphics (SVGs) which uses XML, defined as a series of points and lines 
                 filled with color. These will scale to any screen size without losing quality because the graphics 
@@ -130,7 +141,11 @@
     <!--your trainers section; we are adding an id here to enable visitors to jump to this section by clicking
         on its associated link in the navigation bar: this is a web design best practice. -->
     <section id="your-trainers" class="trainers">
-        <h2 class="section-title primary-border">Meet the Trainers</h2>
+        <div class="flex-row">
+            <h2 class="section-title primary-border">
+                Meet the Trainers
+            </h2>
+        </div>
         <!-- 'Article' semantic element introduced to indicate to screen readers that all wrapped content is related.
             The alt element here is a "simple image" and we are describing its content so that screen readers
             have meaningful information to relay to users. Alt values should 1) describe the image in <= 140 chars,
@@ -175,7 +190,11 @@
 
     <!--reach out section-->
     <section id="reach-out" class="contact">
-        <h2 class="section-title secondary-border">Reach Out</h2>
+        <div class="flex-row">
+            <h2 class="section-title secondary-border">
+                Reach Out
+            </h2>
+        </div>
         <div class="contact-info">
             <div>
                 <!-- adding a contact form to the contact section -->
