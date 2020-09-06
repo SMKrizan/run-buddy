@@ -197,28 +197,53 @@ section {
     background: #fce138;
 }
 
-.steps div {
-    margin-bottom: 80px;
+.step {
+    margin: 50px auto;
+    padding-bottom: 50px;
+    width: 80%;
+    border-bottom: 1px solid #39a6b2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.steps img {
-    width: 15%;
-    margin: 10px 0;
-}
-
-.steps h3 {
+/* the 'flex' property helps define a similar size for children, independent of text content, and can include 3 values: 'flex-grow' (determines how much of the unused space will be distributed to its children), 'flex-shrink' (determines how to size children when container shrinks) and 'flex-basis' (a baseline minimum value for the children); the following applications of 'flex' includes values for 'flex-grow' and 'flex-basis' */
+.step h3 {
     color: #024e76;
     font-size: 46px;
-    margin-top: 10px;
+    /* 'flex' for the following ensures the selector will be >= 30% wide and take any extra space*/
+    flex: 1 30%
 }
 
-.steps p {
-    color: #39a6b2;
-    font-size: 23px;    
+/* 'flex' for the following ensures the selector will be >= 70% wide and will receive extra container space at twice the size of a sibling with a 'flex-grow' value of 1 */
+.step-info {
+    flex: 2 70%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-.steps span {
-    font-size: 38px;
+/*  since the other siblings within this <div> have flexbox width attributes, the img child also needs to have flexbox attributes, or it will not show up because the browser does not know what space to give to it */
+.step-img {
+    flex: 1 12%;
+    margin-right: 20px;
+}
+
+/* this rule will limit the size of the image to the size of its container which can be a problem with browsers running on Microsoft Edge. */
+.step-img img {
+    max-width: 100%;
+}
+
+/* when 'flex-basis' property is excluded from 'flex' it is given a value of 'auto' meaning it is given any remaining space */
+.step-text {
+    flex: 12;
+}
+
+.step-text h4 {
+    font-size: 26px;
+    line-height: 1.5;
+    color: #024e76
 }
 
 .trainer {

@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Run Buddy</title>
-        <link rel="stylesheet" href="./assets/css/style.css" />
-    </head>
 
-    <body>
+<head>
+    <meta charset="UTF-8" />
+    <title>Run Buddy</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
     <!--NAVIGATION-->
     <header>
         <h1>
             <!-- the navigation attribute value below, "/" references the topmost directory and, when used in this way, will take the user to index.html. -->
             <a href="/">RUN BUDDY</a>
         </h1>
-    <nav>
-    <!-- unordered list element -->
-    <ul>
-        <!-- list item element -->
-        <li>
-            <!-- anchor element -->
-            <a href="#what-we-do">What We Do</a>
-        </li>
-        <li>
-            <a href="#what-you-do">What You Do</a>
-        </li>
-        <li>
-            <a href="#your-trainers">Your Trainers</a>
-        </li>
-        <li>
-            <a href="#reach-out">Reach Out</a>
-        </li>
-    </ul>
-    </nav>
+        <nav>
+            <!-- unordered list element -->
+            <ul>
+                <!-- list item element -->
+                <li>
+                    <!-- anchor element -->
+                    <a href="#what-we-do">What We Do</a>
+                </li>
+                <li>
+                    <a href="#what-you-do">What You Do</a>
+                </li>
+                <li>
+                    <a href="#your-trainers">Your Trainers</a>
+                </li>
+                <li>
+                    <a href="#reach-out">Reach Out</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <!-- THE HERO - creating section for the CTA (call to action): a sign-up form -->
@@ -39,21 +40,23 @@
         <!-- Adding a "Start Building Habits" section to the hero. -->
         <div class="hero-cta">
             <h2>Start Building Habits.</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis sunt molestiae exercitationem eligendi tempora et expedita, mollitia officiis repellat ab, aut possimus ea distinctio enim tenetur vitae eos, incidunt voluptatibus!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis sunt molestiae exercitationem
+                eligendi tempora et expedita, mollitia officiis repellat ab, aut possimus ea distinctio enim tenetur
+                vitae eos, incidunt voluptatibus!</p>
         </div>
         <div class="hero-form">
             <h3>Get Started Today!</h3>
-            <p>Fill out this form and one of our trainers 
+            <p>Fill out this form and one of our trainers
                 will schedule a consult</p>
             <form>
                 <!-- notice the "email" and "tel" input types; these will validate and 
                 display a numeric keypad for mobile users, respectively. -->
                 <label for="name">Enter full name:</label>
-                <input type="text" placeholder="Your Name" name="name" id="name" class="form-input"/>
+                <input type="text" placeholder="Your Name" name="name" id="name" class="form-input" />
                 <label for="email">Enter email address:</label>
-                <input type="email" placeholder="Email Address" name="email" id="email" class="form-input"/>
+                <input type="email" placeholder="Email Address" name="email" id="email" class="form-input" />
                 <label for="phone">Enter a telephone number:</label>
-                <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="form-input"/>
+                <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="form-input" />
                 <!-- the question and radio buttons are all being wrapped in the <p></p>
                     so that they will render on the same line. 
                     The <label> links the displayed values to the radio inputs (<for> value
@@ -62,16 +65,16 @@
                     well as button) -->
                 <p>
                     Have you worked out with a trainer before?
-                    <input type="radio" name="trainer-confirm" " id="trainer-yes" />
+                    <input type="radio" name="trainer-confirm" " id=" trainer-yes" />
                     <label for="trainer-yes">Yes</label>
                     <input type="radio" name="trainer-confirm" id="trainer-no" />
                     <label for="trainer-no">No</label>
                 </p>
                 <p>
                     <label for="checkbox">
-                    I acknowledge that I am at least 18 years of age.
+                        I acknowledge that I am at least 18 years of age.
                     </label>
-                    <input type="checkbox" name="age-confirm" id="checkbox" />                   
+                    <input type="checkbox" name="age-confirm" id="checkbox" />
                 </p>
                 <button type="submit">
                     Get running!
@@ -93,7 +96,9 @@
         </div>
         <div class="flex-row">
             <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores placeat rem nemo, voluptatibus ratione vitae? Commodi magnam quo sed repudiandae, error nam, voluptatibus ea ullam vel voluptate nemo iste laudantium.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores placeat rem nemo, voluptatibus ratione
+                vitae? Commodi magnam quo sed repudiandae, error nam, voluptatibus ea ullam vel voluptate nemo iste
+                laudantium.
             </p>
         </div>
     </section>
@@ -112,30 +117,55 @@
                 Notice also the "alt" attribute: this is how content/context of images is explained to search
                 engines and assistive tech, such as screen readers. In this case the element is a "decorative image",
                 so alt is set to "empty" indicating to the screen reader to ignore it as unimportant.-->
-            <img src="./assets/images/step-1.svg" alt="" />
-            <!-- note that the 'span' element is used with each of the following h3 elements in order to
-                be able to define with CSS highlighting of these blocks of text. -->
-            <h3>Step 1: <span>Fill Our the Form Above.</span></h3>
-            <p>You're already here, so why not?</p>
-        </div>
-
-        <div>
-            <img src="./assets/images/step-2.svg" alt="" />
-            <h3>Step 2: <span>Consult With One of Our Trainers.</span></h3>
-            <p>Are you here to build muscle, lose weight, or just feel good?</p>
-        </div>
-
-        <div>
-            <img src="./assets/images/step-3.svg" alt="" />
-            <h3>Step 3: <span>Get Running.</span></h3>
-            <p>Hit the ground running (literally) once your trainer lays out your plan.</p>
-        </div>
-
-        <div>
-            <img src="./assets/images/step-4.svg" alt="" />
-            <h3>Step 4: <span>See Results.</span></h3>
-            <p>Bi-weekly checkins with your trainer will keep you focused.</p>
-        </div>
+            <div class="step">
+                <h3>Step 1:</h3>
+                <div class="step-info">
+                    <div class="step-img">
+                        <img src="./assets/images/step-1.svg" alt="" />
+                    </div>
+                    <div class="step-text">
+                        <h4>Fill Out The Form Above</h4>
+                        <p>You're already here, so why not?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <h3>Step 2:</h3>
+                <div class="step-info">
+                    <div class="step-img">
+                        <!-- the images in this section are each wrapped in a <div> because the <img> element can be unreliable when it comes to sizing them for creating layouts; it's a better practice to wrap them in a <div> or some other container element -->
+                        <img src="./assets/images/step-2.svg" alt="" />
+                    </div>
+                    <div class="step-text">
+                        <h4>Consult With One of Our Trainers.</h4>
+                        <p>Are you here to build muscle, lose weight, or just feel good?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <h3>Step 3:</h3>
+                <div class="step-info">
+                    <div class="step-img">
+                        <img src="./assets/images/step-3.svg" alt="" />
+                    </div>
+                    <div class="step-text">
+                        <h4>Get Running.</h4>
+                        <p>Hit the ground running (literally) once your trainer lays out your plan.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <h3>Step 4:</h3>
+                <div class="step-info">
+                    <div class="step-img">
+                        <img src="./assets/images/step-4.svg" alt="" />
+                    </div>
+                    <div class="step-text">
+                        <h4>See Results.</h4>
+                        <p>Bi-weekly checkins with your trainer will keep you focused.</p>
+                    </div>
+                </div>
+            </div>
     </section>
 
     <!--your trainers section; we are adding an id here to enable visitors to jump to this section by clicking
@@ -157,8 +187,10 @@
                 <h3>Arron Stephens</h3>
                 <h4>Speed / Strength</h4>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum voluptas voluptate amet quod natus suscipit optio deserunt laboriosam repudiandae iste! In nam ullam expedita temporibus nihil molestiae ab modi optio.                    
-                </p>    
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum voluptas voluptate amet quod natus
+                    suscipit optio deserunt laboriosam repudiandae iste! In nam ullam expedita temporibus nihil
+                    molestiae ab modi optio.
+                </p>
             </div>
         </article>
 
@@ -169,7 +201,9 @@
                 <h3>Joanna Gill</h3>
                 <h4>Endurance</h4>
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique nesciunt, expedita architecto necessitatibus earum, asperiores ab qui libero assumenda doloremque, ut repudiandae voluptatibus debitis. Vel perferendis sapiente culpa blanditiis amet!
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique nesciunt, expedita architecto
+                    necessitatibus earum, asperiores ab qui libero assumenda doloremque, ut repudiandae voluptatibus
+                    debitis. Vel perferendis sapiente culpa blanditiis amet!
                 </p>
             </div>
             <img src="./assets/images/trainer-2.jpg" alt="Joanna Gill cooling off after a workout." />
@@ -177,12 +211,15 @@
 
         <!-- third trainer bio -->
         <article class="trainer">
-            <img src="./assets/images/trainer-3.jpg" alt="Harry Smith wearing a headband and lifting comically small pink weights." />
+            <img src="./assets/images/trainer-3.jpg"
+                alt="Harry Smith wearing a headband and lifting comically small pink weights." />
             <div class="trainer-bio text-left">
                 <h3>Harry "the Headband" Smith</h3>
                 <h4>Strength</h4>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium repellat optio, nesciunt iusto distinctio magnam officia odio nemo ratione dolorem vel aspernatur, enim minus saepe aliquid mollitia temporibus culpa dignissimos!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium repellat optio, nesciunt iusto
+                    distinctio magnam officia odio nemo ratione dolorem vel aspernatur, enim minus saepe aliquid
+                    mollitia temporibus culpa dignissimos!
                 </p>
             </div>
         </article>
@@ -208,14 +245,9 @@
                         <button type="submit"></button>
                     </form>
                 </div>
-                <iframe 
+                <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.111367391588!2d-72.29715578585503!3d41.00093557930147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e8bd2528363059%3A0x7828bdb65c8d1252!2s55%20Main%20St%2C%20Sag%20Harbor%2C%20NY%2011963!5e0!3m2!1sen!2sus!4v1598905930079!5m2!1sen!2sus"
-                    frameborder="0" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    aria-hidden="false" 
-                    tabindex="0"
-                >
+                    frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
                 </iframe>
             </div>
             <div>
@@ -246,5 +278,6 @@
             &copy; 2019 Run Buddy, Inc.
         </div>
     </footer>
-    </body>
+</body>
+
 </html>
