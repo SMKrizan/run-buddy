@@ -293,24 +293,26 @@ section {
     color: #fce138;
 }
 
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* the following '>*' syntax indicates to select all elements that are direct children of anything with a class of 'contact-info' */
+.contact-info > * {
+    flex: 1;
+    margin: 15px;
+}
+
 /* By using a "class selector" here, instead of a "type selector" (which is what we would have it we targeted only 
     the iframe) we avoid a situation where styling is being applied to unintended targets, should additional iframes
     be used on other pages referenced by this style sheet. */
 .contact-info iframe {
-    width: 400px;
     height: 400px;
 }
 
 .contact-info div {
-    width: 410px;
-    /* this allows the 'contact-info' container to sit on the same row as the <iframe> element and allows us to
-        assign a width, which the 'inline' property would not let us do. */
-    display: inline-block;
-    /* The content of the <div> would naturally rest at the bottom, so this property centers this content 
-        vertically within its container. */
-    vertical-align: top;
-    text-align: left;
-    margin: 30px 0 0 60px;
     color: white;
 }
 
@@ -323,12 +325,33 @@ section {
 .contact-info p, .contact-info address {
     margin: 20px 0;
     line-height: 1.5;
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
 }
 
 .contact-info a {
     color: #fce138;
+}
+
+.contact-form input, .contact-form textarea {
+    border: 1px solid #024e76;
+    display: block;
+    padding: 7px 15px;
+    font-size: 16px;
+    color: #024e76;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.contact-form button {
+    width: 100%;
+    border: none;
+    background: #fce138;
+    color: #024e76;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 16px;
 }
 
 /* The following two classes are referred to as "utility classes" because they are not specific to any part of the HTML doc and they do only one thing; they can in this case be applied anywhere on the page needing a text-align fix.*/
