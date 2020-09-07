@@ -24,7 +24,7 @@ header {
     /* the following property applies only to elements using 'flex' or 'grid' values and controls how space is distributed between child elements */
     justify-content: space-between;
     /* following property controls the flow of elements on the x-axis "main axis" of the flexbox container */
-    flex-wrap; wrap;
+    flex-wrap: wrap;
 }
 
 /* apply specific style to h1 in header */
@@ -394,7 +394,7 @@ section {
     }
 
     footer h2, footer div {
-        text-align: center:
+        text-align: center;
         width: 100%;
     }
 
@@ -481,6 +481,7 @@ section {
         flex: 0 100%
     }
 
+    /* the order property is used to switch the order of the map and the contact form */
     .contact-form {
         order: 3;
     }
