@@ -373,15 +373,115 @@ section {
 /* it is important to put media queries at the end of the stylesheet and (because we are using 'max-width') in descending order in term of size for the desired affects to display properly on all screens */
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS */
 @media screen and (max-width: 980px) {
+    header {
+        padding-bottom: 0;
+        justify-content: center;
+    }
 
+    header h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 20px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    header nav ul li a {
+        font-size: 20px;
+    }
+
+    footer h2, footer div {
+        text-align: center:
+        width: 100%;
+    }
+
+    .hero-cta, .hero-form {
+        width: 100%;
+    }
+
+    .hero-cta {
+        text-align: center;
+    }
+
+    /* adjustments impacting What We Do/What You Do sections to make wider on small screens */
+    .section-title {
+        width: 80%
+    }
+
+    /* just wide enough for each card to be on its own line */
+    .trainer {
+        flex: 0 70%;
+    }
+
+    /* making sure the Google map is on its own line */
+    .contact-info iframe {
+        flex: 1 100%;
+    }
 }
 
 /* MEDIA QUERY FOR TABLETS */
+/* changes promarily for the What You Do section to stack the children instead of presenting side-by-side and provide more room horizontally */
 @media screen and (max-width: 768px) {
+    section {
+        padding: 30px 15px;
+    }
 
+    .step h3 {
+        flex: 1 100%;
+        text-align: center;
+    }
+
+    .step-info {
+        flex: 2 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    /* limiting the size of the images using flex-basis of 32% */
+    .step-img {
+        flex: 0 32%;
+        margin-right: 0;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .step-text {
+        flex: 100%;
+    }
 }
 
 /* MEDIA QUERY FOR MOBILE PHONES */
+/* similar, minor adjustments primarily impacting widths */
 @media screen and (max-width: 575px) {
+    /* increasing 'submit' button width to make it easier to use on mobile device */
+    .hero-form button {
+        width: 100%;
+    }
 
+    .section-title {
+        width: 95%;
+    }
+
+    .intro p {
+        width: 100%;
+    }
+
+    .trainer {
+        flex: 0 100%;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .contact-info > * {
+        flex: 0 100%
+    }
+
+    .contact-form {
+        order: 3;
+    }
 }
