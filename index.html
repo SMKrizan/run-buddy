@@ -182,27 +182,33 @@
         <div class="trainers">
             <!-- the above <div> is added to contain the 3 article elements within a flexbox container and evolve a "three-column card layout"; the'Article' semantic element indicates to screen readers that all wrapped content is related. The alt element here is a "simple image" and we are describing its content so that screen readers have meaningful information to relay to users. Alt values should 1) describe the image in <= 140 chars, 2) convey content and purpose of image, and 3) should not begin with "image of..." or "graph of...", as screen readers already provide that information. -->
             <article class="trainer">
-                <img src="./assets/images/trainer-1.jpg"
-                    alt="Arron Stephens in his workout clothes, ready to pump iron." />
+                <div class="trainer-img trainer-1"> 
+                    <div>
+                        <h3 class="trainer-name">Arron Stephens</h3>
+                        <h4 class="trainer-role">Speed / Strength</h4>
+                    </div>
+                </div>
                 <div class="trainer-bio">
                     <h3 class="trainer-name">Arron Stephens</h3>
                     <h4 class="trainer-role">Speed / Strength</h4>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum voluptas voluptate amet quod
-                        natus suscipit optio deserunt laboriosam repudiandae iste! In nam ullam expedita temporibus
-                        nihil molestiae ab modi optio.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum voluptas voluptate amet quod natus suscipit optio deserunt  laboriosam repudiandae iste! In nam ullam expedita temporibus nihil molestiae ab modi optio.
                     </p>
                 </div>
             </article>
 
             <article class="trainer">
-                <img src="./assets/images/trainer-2.jpg" alt="Joanna Gill cooling off after a workout." />
+                <div class="trainer-img trainer-2">
+                    <div>
+                        <h3 class="trainer-name">Joanna Gill</h3>
+                        <h4 class="trainer-role">Endurance</h4>
+                    </div>    
+                </div>
                 <div class="trainer-bio">
                     <h3 class="trainer-name">Joanna Gill</h3>
                     <h4 class="trainer-role">Endurance</h4>
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique nesciunt, expedita
-                        architecto necessitatibus earum, asperiores ab qui libero assumenda doloremque, ut repudiandae
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique nesciunt, expedita architecto necessitatibus earum, asperiores ab qui libero assumenda doloremque, ut repudiandae 
                         voluptatibus debitis. Vel perferendis sapiente culpa blanditiis amet!
                     </p>
                 </div>
@@ -210,15 +216,17 @@
 
             <!-- third trainer bio -->
             <article class="trainer">
-                <img src="./assets/images/trainer-3.jpg"
-                    alt="Harry Smith wearing a headband and lifting comically small pink weights." />
+                <div class="trainer-img trainer-3">
+                    <div>
+                        <h3 class="trainer-name">Harry "the Headband" Smith</h3>
+                        <h4 class="trainer-role">Strength</h4>
+                    </div>
+                </div>
                 <div class="trainer-bio">
                     <h3 class="trainer-name">Harry "the Headband" Smith</h3>
                     <h4 class="trainer-role">Strength</h4>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium repellat optio, nesciunt
-                        iusto distinctio magnam officia odio nemo ratione dolorem vel aspernatur, enim minus saepe
-                        aliquid mollitia temporibus culpa dignissimos!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium repellat optio, nesciunt iusto distinctio magnam officia odio nemo ratione dolorem vel aspernatur, enim minus saepe aliquid mollitia temporibus culpa dignissimos!
                     </p>
                 </div>
             </article>
