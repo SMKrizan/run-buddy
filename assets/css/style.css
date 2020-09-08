@@ -285,8 +285,8 @@ section {
     color: #024e76
 }
 
-/* this selector applies the rule only to the very last element in this container */
-.step:last-child {
+/* the following pseudo-code applies its rule to all but the very last element in this container */
+.step:not(:last-child) {
     border-bottom: 1px solid #39a6b2;
 }
 
