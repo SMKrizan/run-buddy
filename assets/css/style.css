@@ -25,6 +25,15 @@ header {
     justify-content: space-between;
     /* following property controls the flow of elements on the x-axis "main axis" of the flexbox container */
     flex-wrap: wrap;
+    /* the following declarations will create a "sticky" header that remains at the top as one scrolls down the page; this feature is currently being tested in Safari, which is the reason for the first position property with Safari's vendor prefix "webkit". Also note this feature is not currently supported  at all in Internet Explorer. */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    /* the following declarations can also be found in the .hero rule; the 'background-attachment: fixed' declaration has also been added to both rules to place the image relative to the viewport rather than the respective elements so that the two applications of the single image can be in visual alignment */
+    background-image: url("../images/hero-bg.jpg");
+    background-size: cover;
+    background-position: 80%;
+    background-attachment: fixed;
 }
 
 /* apply specific style to h1 in header */
@@ -33,6 +42,8 @@ header h1 {
     font-size: 36px;
     color: #fce138;
     margin: 0;
+    /* the following declaration asserts shadows and transparency */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 header a {
@@ -59,8 +70,16 @@ header nav ul li a {
     font-weight: lighter;
     /* the following property value uses the "viewport width" unit of measurement, which is a relative measurement of fontsize to total window width, as a percentage */
     font-size: 1.55vw;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+/* hover effects */
+header nav ul li a:hover {
+    background: #fce138;
+    color: #024e76;
+    border-radius: 15px;
+    text-shadow: none;
+}
 footer {
     display: flex;
     justify-content: space-between;
@@ -97,7 +116,8 @@ section {
     flex-wrap: wrap;
     background-image: url("../images/hero-bg.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: 80%;
+    background-attachment: fixed;
     /* the default value for the below property is 'stretch' which sets all flex children to the height of the tallest one */
     align-items: flex-start;
 }
@@ -121,16 +141,19 @@ section {
     font-style: italic;
     font-size: 55px;
     color: #fce138;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-form {
     color: #024e76;
-    background-color: #fce138;
+    background-color: rgba(252, 225, 56, 0.8);
     padding: 20px;
     /* shorthand property to allow border style, width and color all in one line, 
         which would otherwise be denoted individually as "border-style" "border-width"
         and "border-color" */
     border: solid 3px #024e76;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
 }
 
 .hero-form h3 {
@@ -150,6 +173,16 @@ section {
     color: #024e76;
     width: 100%;
     margin-bottom: 15px;
+    border-radius: 10px;
+    /* adds transparency to the form inputs */
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+/* removes form transparency when the inputs are in focus */
+.form-input:focus {
+    background-color: rgba(255,255,255, 1);
+    /* some browsers add a default outline to the input field; the following declaration will eliminate such a conflict with styling previously added */
+    outline: none;
 }
 
 .hero-form label {
@@ -162,8 +195,13 @@ section {
     padding: 10px 20px;
     font-size: 16px;
     border: none;
+    border-radius: 10px;
 }
 
+/* hover effects */
+.hero-form button:hover {
+    background-color: #39a6b2;
+}
 .intro p {
     line-height: 1.7;
     color: #39a6b2;
@@ -203,7 +241,6 @@ section {
     margin: 50px auto;
     padding-bottom: 50px;
     width: 80%;
-    border-bottom: 1px solid #39a6b2;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -246,6 +283,11 @@ section {
     font-size: 26px;
     line-height: 1.5;
     color: #024e76
+}
+
+/* this selector applies the rule only to the very last element in this container */
+.step:last-child {
+    border-bottom: 1px solid #39a6b2;
 }
 
 .trainers {
@@ -394,6 +436,15 @@ section {
     width: 100%;
     margin-bottom: 15px;
     margin-top: 5px;
+    border-radius: 10px;
+    /* adding transparency to input fields */
+    background-color: rgba(255, 255, 255, 0.75)
+}
+
+/* removing transparency when form fields are in focus and removing any border conflicts due to default browser settings */
+.contact-form input:focus, .contact-form textarea:focus {
+    background-color: rgba(255, 255, 255, 1.0);
+    border:none;
 }
 
 .contact-form button {
@@ -404,6 +455,13 @@ section {
     text-align: center;
     padding: 15px 0;
     font-size: 16px;
+    border-radius: 10px;
+}
+
+/* hover effects */
+.contact-form button:hover {
+    color: #fce138;
+    background: #39a6b2;
 }
 
 /* The following two classes are referred to as "utility classes" because they are not specific to any part of the HTML doc and they do only one thing; they can in this case be applied anywhere on the page needing a text-align fix.*/
@@ -426,6 +484,8 @@ section {
     header {
         padding-bottom: 0;
         justify-content: center;
+        /* this declaration will undo the header stickiness for small screens */
+        position: relative;
     }
 
     header h1 {
