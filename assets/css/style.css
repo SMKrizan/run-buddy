@@ -1,3 +1,10 @@
+/* this application of variables to the global pseudo-class ":root" will target the top-most parent element */
+:root {
+    --primary-color: #fce138;
+    --secondary-color: #024e76;
+    --tertiary-color: #39a6b2;
+}
+
 /* universal selector '*' aka 'wild-card' 
 used to over-ride some default browser elements */
 * {
@@ -11,14 +18,14 @@ used to over-ride some default browser elements */
 
 /* applies color and font to whole page */
 body {
-    color: #39a6b2;
+    color: var(--tertiary-color);
     font-family: Helvetica, Arial, sans-serif;
 }
 
 /* apply styles to <header> */
 header {
     padding: 20px 35px;
-    background-color: #39a6b2;
+    background-color: var(--tertiary-color);
     /* the application of flexbox will make the <header> (parent element) a row and control the distribution of its content (child elements) on either a horizontal or vertical axis to facilitate dynamic re-sizing; flexbox over-rides block-level behavior */
     display: flex;
     /* the following property applies only to elements using 'flex' or 'grid' values and controls how space is distributed between child elements */
@@ -34,13 +41,15 @@ header {
     background-size: cover;
     background-position: 80%;
     background-attachment: fixed;
+    /* the following declaration will bring the stack order of the header to the top */
+    z-index: 9999;
 }
 
 /* apply specific style to h1 in header */
 header h1 {
     font-weight: bold;
     font-size: 36px;
-    color: #fce138;
+    color: var(--primary-color);
     margin: 0;
     /* the following declaration asserts shadows and transparency */
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -48,7 +57,7 @@ header h1 {
 
 header a {
     text-decoration: none;
-    color: #fce138;    
+    color: var(--primary-color);    
 }
 
 header nav {
@@ -75,8 +84,8 @@ header nav ul li a {
 
 /* hover effects */
 header nav ul li a:hover {
-    background: #fce138;
-    color: #024e76;
+    background: var(--primary-color);
+    color: var(--secondary-color);
     border-radius: 15px;
     text-shadow: none;
 }
@@ -84,13 +93,13 @@ footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    background: #fce138;
+    background: var(--primary-color);
     width: 100%;
     padding: 40px 35px;
 }
 
 footer h2 {
-    color: #024e76;
+    color: var(--secondary-color);
     font-size: 30px;
     margin: 0;
 }
@@ -101,7 +110,7 @@ footer div {
 }
 
 footer a {
-    color: #024e76;
+    color: var(--secondary-color);
 }
 
 section {
@@ -140,18 +149,18 @@ section {
 .hero-cta h2 {
     font-style: italic;
     font-size: 55px;
-    color: #fce138;
+    color: var(--primary-color);
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-form {
-    color: #024e76;
+    color: var(--secondary-color);
     background-color: rgba(252, 225, 56, 0.8);
     padding: 20px;
     /* shorthand property to allow border style, width and color all in one line, 
         which would otherwise be denoted individually as "border-style" "border-width"
         and "border-color" */
-    border: solid 3px #024e76;
+    border: solid 3px var(--secondary-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
 }
@@ -166,11 +175,11 @@ section {
 }
 
 .form-input {
-    border: solid 1px c#024e76;
+    border: solid 1px cvar(--secondary-color);
     display: block;
     padding: 7px 15px;
     font-size: 16px;
-    color: #024e76;
+    color: var(--secondary-color);
     width: 100%;
     margin-bottom: 15px;
     border-radius: 10px;
@@ -189,22 +198,88 @@ section {
     margin: 0 5px;
 }
 
+/* making the default checkbox/radio buttons invisible */
+.checkbox-wrapper input, .radio-wrapper input {
+    opacity: 0;
+}
+
+/* the following two rules will tie the created CSS pseudo-code to the behavior of the default buttons; when default buttons are in their default state, they will have no pseudo content but as soon as an input is checked, the pseudocode content and all styles become visible */
+.checkbox-wrapper input + label::after,
+.radio-wrapper input + label::after {
+    content: none;
+}
+
+.checkbox-wrapper input:checked + label::after,
+.radio-wrapper input:checked + label::after {
+    content: "";
+}
+
+/* prepping label elements to hold custom checkbox/radio buttons */
+.checkbox-wrapper label, .radio-wrapper label {
+    position: relative;
+    left: 10px;
+    margin: 10px;
+    line-height: 1.6;
+}
+
+/* the '::before' pseudo-element allows content to be added to an element using CSS, placing this content before everything else in the element */
+.checkbox-wrapper label::before, .radio-wrapper label::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid var(--secondary-color);
+    position: absolute;
+    top: -4px;
+    left: -30px;
+}
+
+.radio-wrapper label::before {
+    border-radius: 50%;
+}
+
+/* the following two pseudo-elements will define what the checkbox and radio buttons look like when checked */
+.radio-wrapper label::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    position: absolute;
+    left: -29px;
+    top: -3px;
+    background-image: radial-gradient(circle, var(--tertiary-color), #024276);
+}
+
+.checkbox-wrapper label::after {
+    content: "";
+    height: 6px;
+    width: 14px;
+    border-left: 2px solid var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    position: absolute;
+    left: -26px;
+    top: 1px;
+    transform: rotate(-58deg);
+}
+
 .hero-form button {
-    background-color: #024e76;
-    color: #fce138;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
     padding: 10px 20px;
     font-size: 16px;
     border: none;
     border-radius: 10px;
 }
 
-/* hover effects */
+/* hover effect */
 .hero-form button:hover {
-    background-color: #39a6b2;
+    background-color: var(--tertiary-color);
 }
+
 .intro p {
     line-height: 1.7;
-    color: #39a6b2;
+    color: var(--tertiary-color);
     text-align: center;
     width: 80%;
     font-size: 20px;
@@ -216,7 +291,7 @@ section {
 
 .section-title {
     font-size: 48px;
-    color: #024e76;
+    color: var(--secondary-color);
     border-bottom: 3px solid;
     /* the following value produces an in-line element, padding and similar attricutes behave as they would with block.*/
     padding-bottom: 20px;
@@ -226,15 +301,15 @@ section {
 }
 
 .primary-border {
-    border-bottom-color: #fce138;
+    border-bottom-color: var(--primary-color);
 }
 
 .secondary-border {
-    border-bottom-color: #39a6b2;
+    border-bottom-color: var(--tertiary-color);
 }
 
 .steps {
-    background: #fce138;
+    background: var(--primary-color);
 }
 
 .step {
@@ -249,7 +324,7 @@ section {
 
 /* the 'flex' property helps define a similar size for children, independent of text content, and can include 3 values: 'flex-grow' (determines how much of the unused space will be distributed to its children), 'flex-shrink' (determines how to size children when container shrinks) and 'flex-basis' (a baseline minimum value for the children); the following applications of 'flex' includes values for 'flex-grow' and 'flex-basis' */
 .step h3 {
-    color: #024e76;
+    color: var(--secondary-color);
     font-size: 46px;
     /* 'flex' for the following ensures the selector will be >= 30% wide and take any extra space*/
     flex: 1 30%
@@ -282,12 +357,12 @@ section {
 .step-text h4 {
     font-size: 26px;
     line-height: 1.5;
-    color: #024e76
+    color: var(--secondary-color)
 }
 
 /* the following pseudo-code applies its rule to all but the very last element in this container */
 .step:not(:last-child) {
-    border-bottom: 1px solid #39a6b2;
+    border-bottom: 1px solid var(--tertiary-color);
 }
 
 .trainers {
@@ -301,8 +376,8 @@ section {
 .trainer {
     flex: 1;
     margin: 20px;
-    background: #024e76;
-    color: #fce138;
+    background: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .trainer img {
@@ -329,7 +404,7 @@ section {
 }
 
 .services {
-    background: #fce138;
+    background: var(--primary-color);
 }
 
 .service-grid-wrapper {
@@ -344,14 +419,14 @@ section {
     display: grid;
     grid-template-columns: 1fr repeat(2, 4fr);
     grid-template-rows: repeat(5, 1fr) 2fr;
-    border: 2px solid #024e76;
-    color: #024e76;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
     font-size: 1.2rem;
 }
 
 .service-grid-item {
     padding: 15px 0;
-    border: 2px solid #024e76;
+    border: 2px solid var(--secondary-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -379,12 +454,12 @@ section {
     font-weight: bold;
 }
 .contact {
-    background-color: #024e76;
-    margin-bottom: 3px solid #39a6b2;
+    background-color: var(--secondary-color);
+    margin-bottom: 3px solid var(--tertiary-color);
 }
 
 .contact h2 {
-    color: #fce138;
+    color: var(--primary-color);
 }
 
 .contact-info {
@@ -411,7 +486,7 @@ section {
 }
 
 .contact-info h3 {
-    color: #fce138;
+    color: var(--primary-color);
     font-size: 32px;
 }
 
@@ -424,15 +499,15 @@ section {
 }
 
 .contact-info a {
-    color: #fce138;
+    color: var(--primary-color);
 }
 
 .contact-form input, .contact-form textarea {
-    border: 1px solid #024e76;
+    border: 1px solid var(--secondary-color);
     display: block;
     padding: 7px 15px;
     font-size: 16px;
-    color: #024e76;
+    color: var(--secondary-color);
     width: 100%;
     margin-bottom: 15px;
     margin-top: 5px;
@@ -450,8 +525,8 @@ section {
 .contact-form button {
     width: 100%;
     border: none;
-    background: #fce138;
-    color: #024e76;
+    background: var(--primary-color);
+    color: var(--secondary-color);
     text-align: center;
     padding: 15px 0;
     font-size: 16px;
@@ -460,8 +535,8 @@ section {
 
 /* hover effects */
 .contact-form button:hover {
-    color: #fce138;
-    background: #39a6b2;
+    color: var(--primary-color);
+    background: var(--tertiary-color);
 }
 
 /* The following two classes are referred to as "utility classes" because they are not specific to any part of the HTML doc and they do only one thing; they can in this case be applied anywhere on the page needing a text-align fix.*/
