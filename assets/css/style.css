@@ -1,3 +1,10 @@
+/* this application of variables to the global pseudo-class ":root" will target the top-most parent element */
+:root {
+    --primary-color: #fce138;
+    --secondary-color: #024e76;
+    --tertiary-color: #39a6b2;
+}
+
 /* universal selector '*' aka 'wild-card' 
 used to over-ride some default browser elements */
 * {
@@ -34,6 +41,8 @@ header {
     background-size: cover;
     background-position: 80%;
     background-attachment: fixed;
+        /* the following declaration will bring the stack order of the header to the top */
+        z-index: 9999;
 }
 
 /* apply specific style to h1 in header */
@@ -187,6 +196,71 @@ section {
 
 .hero-form label {
     margin: 0 5px;
+}
+
+/* making the default checkbox/radio buttons invisible */
+.checkbox-wrapper input, .radio-wrapper input {
+    opacity: 0;
+}
+
+/* the following two rules will tie the created CSS pseudo-code to the behavior of the default buttons; when default buttons are in their default state, they will have no pseudo content but as soon as an input is checked, the pseudocode content and all styles become visible */
+.checkbox-wrapper input + label::after,
+.radio-wrapper input + label::after {
+    content: none;
+}
+
+.checkbox-wrapper input:checked + label::after,
+.radio-wrapper input:checked + label::after {
+    content: "";
+}
+
+/* prepping label elements to hold custom checkbox/radio buttons */
+.checkbox-wrapper label, .radio-wrapper label {
+    position: relative;
+    left: 10px;
+    margin: 10px;
+    line-height: 1.6;
+}
+
+/* the '::before' pseudo-element allows content to be added to an element using CSS, placing this content before everything else in the element */
+.checkbox-wrapper label::before, .radio-wrapper label::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid var(--secondary-color);
+    position: absolute;
+    top: -4px;
+    left: -30px;
+}
+
+.radio-wrapper label::before {
+    border-radius: 50%;
+}
+
+/* the following two pseudo-elements will define what the checkbox and radio buttons look like when checked */
+.radio-wrapper label::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    position: absolute;
+    left: -29px;
+    top: -3px;
+    background-image: radial-gradient(circle, var(--tertiary-color), #024276);
+}
+
+.checkbox-wrapper label::after {
+    content: "";
+    height: 6px;
+    width: 14px;
+    border-left: 2px solid var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    position: absolute;
+    left: -26px;
+    top: 1px;
+    transform: rotate(-58deg);
 }
 
 .hero-form button {
