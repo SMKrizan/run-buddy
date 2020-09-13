@@ -41,8 +41,8 @@ header {
     background-size: cover;
     background-position: 80%;
     background-attachment: fixed;
-        /* the following declaration will bring the stack order of the header to the top */
-        z-index: 9999;
+    /* the following declaration will bring the stack order of the header to the top */
+    z-index: 9999;
 }
 
 /* apply specific style to h1 in header */
@@ -402,7 +402,7 @@ section {
 }
 
 .trainer-img {
-    width:100%;
+    width: 100%;
     min-height: 300px;
     background-size: cover;
     display: flex;
