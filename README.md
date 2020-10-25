@@ -8,9 +8,12 @@ A website that offers fitness training services.
 * CSS
 
 ## Website
-https://smkrizan.github.io/run-buddy/
+https://smkrizan.github.io/run-buddy/.
+
+## Screenshot
+<img src="/images/Screenshot-run-buddy.jpg" alt="screenshot of Run-Buddy homepage">
 
 ## Contribution
 Made with ❤️ by Sara Krizan
 
-### &copy2019 Run Buddy, Inc
+### ©2019 Run Buddy, Inc
