@@ -11,7 +11,7 @@ A website that offers fitness training services.
 https://smkrizan.github.io/run-buddy/.
 
 ## Screenshot
-<img src="/images/Screenshot-run-buddy.jpg" alt="screenshot of Run-Buddy homepage">
+<img src="assets/images/Screenshot-run-buddy.jpg" alt="screenshot of Run-Buddy homepage">
 
 ## Contribution
 Made with ❤️ by Sara Krizan
